@@ -3,10 +3,10 @@
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
 <script src="js/quick_fetch.js"></script>
 
-<p fetch="https://api.sampleapis.com/wines/reds" data-save="red_wines">{red_wines[0].wine}</p>
-<p fetch="https://api.sampleapis.com/wines/reds" data-save="red_wines">{red_wines[0].winery}</p>
+<p fetch="https://api.sampleapis.com/wines/reds" name="red_wines">{red_wines[0].wine}</p>
+<p fetch="https://api.sampleapis.com/wines/reds" name="red_wines">{red_wines[0].winery}</p>
 
-<div fetch="https://api.sampleapis.com/coffee/hot" data-save="coffee">
+<div fetch="https://api.sampleapis.com/coffee/hot" name="coffee">
     <h1>{coffee[0].title}</h1>
     <p>{coffee[0].description}</p>
     <p>{coffee[0].ingredients}</p>
@@ -16,4 +16,11 @@
     <p>{coffee[1].description}</p>
     <p>{coffee[1].ingredients}</p>
     <img src="{coffee[1].image}" height="200" width="200">
+
+    <foreach data="coffee">
+        <h1>{title}</h1>
+        <p>{description}</p>
+        <p>{ingredients}</p>
+        <img src="{image}" height="200" width="200">
+    </foreach>
 </div>
